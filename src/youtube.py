@@ -26,7 +26,7 @@ def youtubeSearch():
             part='liveStreamingDetails',
             id=search_item['id']['videoId'],
         ).execute()
-        published_at=datetime.strptime(live_info['items'][0]['liveStreamingDetails']['actualStartTime'], '%Y-%m-%dT%H:%M:%SZ') + timedelta(hours=9)
+        published_at=datetime.strptime(live_info['items'][0]['liveStreamingDetails']['actualStartTime'], '%Y-%m-%dT%H:%M:%S%fZ') + timedelta(hours=9)
         notice_item = {
             'title' : search_item['snippet']['title'],
             'distributor' : search_item['snippet']['channelTitle'],
